@@ -2,6 +2,9 @@
 
 **93 Discord Bot**
 
+Ninethree is a discord bot application for moderation and utility.
+ナインスリー は、モデレートとユーティリティのための不和ボットアプリケーションです。
+
 Bot Invite: https://discord.com/oauth2/authorize?client_id=718749763859775559&permissions=8&scope=bot
 
 **Upcoming/Planned Features:**
