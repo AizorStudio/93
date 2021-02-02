@@ -9,8 +9,8 @@ from googleapiclient.discovery import build
 now = datetime.datetime.now()
 now_date = now.strftime("%c")
 
-my_api_key = "AIzaSyCfhRAX4kFCgYK74V0jS5gcQGuSme3xnew"
-my_cse_id = "219201fb9a78217af"
+my_api_key = ""
+my_cse_id = ""
 
 
 def google_search(search_term, api_key, cse_id, **kwargs):
@@ -117,32 +117,7 @@ class Searches(commands.Cog):
             await ctx.send(embed = embed)
         
         except:
-            await ctx.send(f"No results found")
-
-
-    @commands.command()
-    async def news(self, ctx):
-        main_url = "https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=4dbc17e007ab436fb66416009dfb59a8"
-
-        open_bbc_page = requests.get(main_url).json()
-
-        article = open_bbc_page["articles"]
-
-        results = []
-        desc = []
-
-        for ar in article:
-            results.append(ar["title"])
-
-        for de in article:
-            desc.append(de["url"])
-
-        em = discord.Embed(title="BBC News Daily", description=f"{now_date}", color=0xb3d4ff)
-        em.set_footer(text=f"Source: BBC News")
-        for i in range(len(results)):
-            em.add_field(name=f"{results[i]}", value=f"{desc[i]}‎", inline=False)
-
-        await ctx.send(embed=em)
+            await ctx.send(f"No results found"
 
 
     @commands.command()
@@ -206,21 +181,6 @@ class Searches(commands.Cog):
         
         await ctx.send(embed=e)
         
-
-    @commands.command(aliases=['ms'])
-    async def multisearch(self, ctx, *args):
-        try:
-            query = " ".join(args)
-
-            result = google_search(query, my_api_key, my_cse_id)
-
-            await ctx.send(
-                f"Search Results for **'{query}'** - Requested by **{ctx.author}**:\n<{result['items'][0]['link']}>\n<{result['items'][1]['link']}>\n<{result['items'][2]['link']}>")
-
-        except:
-            em = discord.Embed(description=f"An error occured", color=0xb3d4ff)
-            await ctx.send(embed=em)
-
 
 def setup(client):
     client.add_cog(Searches(client))
