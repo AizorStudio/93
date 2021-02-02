@@ -4,7 +4,7 @@ import json
 from pymongo import MongoClient
 import psutil
 
-uri = "mongodb+srv://riju:1234@cluster0.owqch.mongodb.net/93?retryWrites=true&w=majority"
+uri = ""
 
 cluster = MongoClient(uri)
 db = cluster["93"]
