@@ -5,7 +5,7 @@ import requests
 from pymongo import MongoClient
 
 
-uri = "mongodb+srv://riju:1234@cluster0.vvjym.mongodb.net/osu?retryWrites=true&w=majority"
+uri = ""
 
 
 cluster = MongoClient(uri)
@@ -44,7 +44,7 @@ class Osu(commands.Cog):
             url = 'https://osu.ppy.sh/api/get_user'
 
             paras = {
-                'k': '6a85011c43953ba2ee63ba939f40988dd399d90f',
+                'k': '',
                 'u': osu_id,
             }
 
@@ -96,7 +96,7 @@ class Osu(commands.Cog):
             url = 'https://osu.ppy.sh/api/get_user_best'
 
             paras = {
-                'k': '6a85011c43953ba2ee63ba939f40988dd399d90f',
+                'k': '',
                 'u': osu_id,
             }
 
@@ -135,7 +135,7 @@ class Osu(commands.Cog):
             url = 'https://osu.ppy.sh/api/get_user'
 
             paras = {
-                'k': '6a85011c43953ba2ee63ba939f40988dd399d90f',
+                'k': '',
                 'u': user,
             }
 
