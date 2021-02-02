@@ -215,47 +215,6 @@ async def repeat(ctx, *args):
 	await ctx.send(' '.join(args))
 
 
-@client.command(aliases=['covid19', 'corona', 'coronavirus'])
-async def covid(ctx, *query):
-  query = " ".join(query)
-
-  try:
-      url = "https://covid-19-data.p.rapidapi.com/country"
-
-      querystring = {"format": "json", "name": query}
-
-      headers = {
-            'x-rapidapi-host': "covid-19-data.p.rapidapi.com",
-            'x-rapidapi-key': "3538e1cd82mshd4a0fa5710bb64ap1693c0jsn20c8189a8a7d"
-        }
-
-      response = requests.request("GET", url, headers=headers, params=querystring)
-
-      data = response.json()
-
-      country = data[0]['code'].lower()
-
-      em = discord.Embed(
-            title=f"{data[0]['country']} ({data[0]['code']})", color=0xff0059
-        )
-
-      em.set_image(url="https://i.imgur.com/cusC1A7.png")
-      em.add_field(name=f"Confirmed", value=f"{data[0]['confirmed']}")
-      em.add_field(name=f"Recovered", value=f"{data[0]['recovered']}")
-      em.add_field(name=f"Critical", value=f"{data[0]['critical']}")
-      em.add_field(name=f"Deaths", value=f"{data[0]['deaths']}")
-      em.add_field(name=f"Last Update", value=f"{data[0]['lastUpdate']}")
-      em.set_thumbnail(url=f"https://flagcdn.com/w320/{country}.png")
-
-      await ctx.send(embed=em)
-
-  except:
-      embed = discord.Embed(
-            description=f"**{ctx.author}** Something went wrong, try again with a different name",
-            color=0xff0000)
-      await ctx.send(embed=embed)
-
-
 @client.command()
 async def invite(ctx):
     em = discord.Embed(
@@ -270,4 +229,4 @@ async def invite(ctx):
     await ctx.send(embed=em)
 
 
-client.run('NzE4NzQ5NzYzODU5Nzc1NTU5.XttZ4Q.-SUiziLJ-9a8TBGKKKPFxW1OY4c')
+client.run('')
