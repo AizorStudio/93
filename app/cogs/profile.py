@@ -5,7 +5,7 @@ import asyncio
 
 
 
-uri = "mongodb+srv://riju:1234@cluster0.nblcd.mongodb.net/profiles?retryWrites=true&w=majority"
+uri = "\"
 
 cluster = MongoClient(uri)
 db = cluster["93"]
