@@ -71,7 +71,7 @@ class Searches(commands.Cog):
 
     @commands.command()
     async def movie(self, ctx, *, arg):
-        url = "http://www.omdbapi.com/?apikey=e3d6a084&"
+        url = "http://www.omdbapi.com/?apikey=&"
         year = ''
         params = {
             't' : arg,
