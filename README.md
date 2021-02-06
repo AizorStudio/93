@@ -12,6 +12,8 @@ Bot Invite: https://discord.com/oauth2/authorize?client_id=718749763859775559&pe
 **Upcoming/Planned Features:**
 - Logging
 - Infraction System
+- Guild Info commands (guild icon, splash, banner)
+- Member join / Member remove
 - Removing unused functions
 
 **Modules**
