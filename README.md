@@ -15,6 +15,8 @@ Bot Invite: https://discord.com/oauth2/authorize?client_id=718749763859775559&pe
 - Guild Info commands (guild icon, splash, banner)
 - Member join / Member remove
 - Removing unused functions
+- Emote List
+- Emote Info
 
 **Modules**
 - Basic
