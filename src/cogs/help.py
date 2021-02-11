@@ -57,8 +57,6 @@ class Help(commands.Cog):
     )
     async def help(self, ctx, sub=None):
 
-        cogs = cog_list()
-
         if not sub:
             e = discord.Embed(
                 description=f"[http://ninethree.ga/invite](https://discord.com/oauth2/authorize?client_id=718749763859775559&permissions=8&scope=bot)"
@@ -71,13 +69,27 @@ class Help(commands.Cog):
 
             return await ctx.send(embed=e)
 
+        sub = sub.lower()
+
+        cogs = cog_list()
+
         if sub not in cogs:
             return await ctx.send(embed=discord.Embed(description="That is not a valid module name. Use `<help` to get a list of all available modules"))
-            
+        
+        cm = self.client.get_cog(sub.capitalize())
+
+        des = []
+
+        command_list = cm.get_commands()
+
+        for cmd in command_list:
+            des.append(f"`{cmd.name}` - {cmd.brief}")
+        
         e = discord.Embed(
-            title=f"Command Help for {sub}"
+            title=f"{sub.capitalize()} Commands",
+            description='\n'.join(des)
         )
-         
+
         await ctx.send(embed=e)
         
         
