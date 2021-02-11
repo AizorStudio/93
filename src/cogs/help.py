@@ -35,7 +35,7 @@ class Help(commands.Cog):
 
         des = "• " + "\n• ".join(cog_cap)
 
-        e = discord.Embed(title="ナインスリー Folders", description=des)
+        e = discord.Embed(title="ナインスリー Folders", description=des, color=0xfcfcfc)
         e.set_footer(text="<help [module] for sub-commands & <cmd [command] for usage")
 
         await ctx.send(embed=e)
@@ -48,7 +48,31 @@ class Help(commands.Cog):
     )
     async def cmd(self, ctx, command=None):
         if not command:
+            return await ctx.send(embed=discord.Embed(description="No valid command name provided. Try using `<modules`"))
+
+        command = command.lower()
+
+        cmd = self.client.get_command(command)
+
+        if not cmd:
             return await ctx.send(embed=discord.Embed(description="That is not a valid command name. Try using `<modules`"))
+
+        if not cmd.aliases:
+            aliases = "None"
+        
+        else:
+            aliases=', '.join(cmd.aliases())
+
+        e = discord.Embed(
+            title=f"Command help for {cmd.name}", color=0xfcfcfc
+        )
+
+        e.add_field(name="Aliases", value=f"{aliases}")
+        e.add_field(name="Command Usage", value=f"{cmd.usage}")
+        e.add_field(name="Parent Module & Command", value=f"{cmd.cog_name} • {cmd.parent}", inline=False)
+        e.add_field(name="Description", value=f"{cmd.brief}", inline=False)
+
+        await ctx.send(embed=e)
 
 
     @commands.command(
@@ -59,9 +83,10 @@ class Help(commands.Cog):
 
         if not sub:
             e = discord.Embed(
+                color=0xfcfcfc,
                 description=f"[http://ninethree.ga/invite](https://discord.com/oauth2/authorize?client_id=718749763859775559&permissions=8&scope=bot)"
             )
-            e.add_field(name="Help commands", value="`<modules` List of all modules\n`<help [module]` for commands in a module", inline=False)
+            e.add_field(name="Help commands", value="`<modules` List of all modules\n`<cmd [command]` For command help\n`<help [module]` for commands in a module", inline=False)
             e.add_field(name="Website", value=f"[http://ninethree.ga](http://ninethree.ga)", inline=True)
             e.add_field(name="Issues", value=f"[http://ninethree.ga/issues](https://github.com/entiddie/93/issues)", inline=True)
             e.set_thumbnail(url="https://i.imgur.com/LHEykHU.png")
