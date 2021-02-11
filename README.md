@@ -23,6 +23,8 @@ Bot Invite: https://discord.com/oauth2/authorize?client_id=718749763859775559&pe
 - Global/Guild afk
 - Lock/Unlock 
 - Ignore (don't respond in specific text channels)
+- Manage own role (color & name)
+- Add/Remove Roles
 
 **Modules**
 - Basic
