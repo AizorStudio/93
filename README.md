@@ -17,6 +17,12 @@ Bot Invite: https://discord.com/oauth2/authorize?client_id=718749763859775559&pe
 - Removing unused functions
 - Emote List
 - Emote Info
+- Misc: user id, discrim, etc
+- Voice: vc all mute, deaf, mute, deaf, disconnect
+- Purge: messages with specific term(s)
+- Global/Guild afk
+- Lock/Unlock 
+- Ignore (don't respond in specific text channels)
 
 **Modules**
 - Basic
