@@ -22,6 +22,7 @@ Bot Invite: https://discord.com/oauth2/authorize?client_id=718749763859775559&pe
 - Ignore (don't respond in specific text channels)
 - Manage own role (color & name)
 - Add/Remove Roles
+- Better help page
 
 **Modules**
 - Basic
