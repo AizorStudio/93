@@ -24,6 +24,7 @@ Bot Invite: https://discord.com/oauth2/authorize?client_id=718749763859775559&pe
 - Add/Remove Roles
 - Better help page (USE .reply)
 - Uptime
+- Prefixes
 
 **Modules**
 - Basic
