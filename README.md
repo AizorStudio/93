@@ -25,6 +25,7 @@ Bot Invite: https://discord.com/oauth2/authorize?client_id=718749763859775559&pe
 - Better help page (USE .reply)
 - Uptime
 - Prefixes
+- Emote Search
 
 **Modules**
 - Basic
