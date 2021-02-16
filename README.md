@@ -32,6 +32,8 @@ Bot Invite: https://discord.com/oauth2/authorize?client_id=718749763859775559&pe
 - Todo List
 - New error handlers
 - Friend bots
+- Role list
+- Role strip
 
 **Modules**
 - Basic
