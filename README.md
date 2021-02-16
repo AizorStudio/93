@@ -29,6 +29,7 @@ Bot Invite: https://discord.com/oauth2/authorize?client_id=718749763859775559&pe
 - Get Emote by ID
 - Emote Info
 - Emote add and remove
+- Lists
 
 **Modules**
 - Basic
